@@ -3,22 +3,22 @@
 
 #include <stdarg.h>
 #include <unistd.h>
-#include <stdio.h>
 
 /**
- * struct Specifier - format specifier and corresponding function
- * @specifier: format specifier character
- * @function: pointer to the function that handles the specifier
+ * struct print_specifier - struct for printf specifier
+ * @specifier: the format specifier
+ * @f: pointer to the function to handle specifier
  */
-typedef struct Specifier
+typedef struct print_specifier
 {
-	char specifier;
-	int (*function)(va_list);
-} Specifier;
+	char *specifier;
+	int (*f)(va_list);
+} print_specifier_t;
 
 int _putchar(char c);
 int _printf(const char *format, ...);
 int print_char(va_list args);
 int print_string(va_list args);
+int print_percent(va_list args);
 
 #endif

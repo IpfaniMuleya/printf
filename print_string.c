@@ -2,10 +2,9 @@
 
 /**
  * print_string - prints a string to the standard output stream
- * @args: variable-length argument list of type va_list
+ * @args: list of type va_list containing the string to print
  *
- * Return: length of the string that was printed,
- * not including the terminating null character
+ * Return: number of characters printed
  */
 
 int print_string(va_list args)
@@ -13,11 +12,13 @@ int print_string(va_list args)
 	char *s = va_arg(args, char *);
 	int length = 0;
 
-	while (*s != '\0')
+	if (!s)
+		s = "(null)";
+
+	while (*s)
 	{
-		_putchar(*s);
+		length += _putchar(*s);
 		s++;
-		length++;
 	}
 
 	return (length);
