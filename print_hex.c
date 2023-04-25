@@ -10,20 +10,22 @@ void print_hex_helper(unsigned int n, int *count, int uppercase);
 int print_hex(va_list args)
 {
 	unsigned int num = va_arg(args, unsigned int);
-	unsigned int copy = num, count = 0;
+	unsigned int copy = num;
+	int count = 0;
 
 	do {
 		count++;
 		copy /= 16;
 	} while (copy);
 
-	print_hex_helper(num, 'a');
+	print_hex_helper(num, &count, 'a');
 
 	return (count);
 }
 
 /**
- * print_hex_upper - prints an unsigned integer in base 16 using uppercase letters
+ * print_hex_upper - prints an unsigned integer in base 16
+ * using uppercase letters
  * @args: the argument to print
  *
  * Return: the number of digits printed
@@ -31,14 +33,15 @@ int print_hex(va_list args)
 int print_hex_upper(va_list args)
 {
 	unsigned int num = va_arg(args, unsigned int);
-	unsigned int copy = num, count = 0;
+	unsigned int copy = num;
+	int count = 0;
 
 	do {
 		count++;
 		copy /= 16;
 	} while (copy);
 
-	print_hex_helper(num, 'A');
+	print_hex_helper(num, &count, 'A');
 
 	return (count);
 }

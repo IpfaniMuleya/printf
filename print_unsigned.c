@@ -1,4 +1,4 @@
-nclude "main.h"
+#include "main.h"
 
 void print_unsigned_helper(unsigned int n, int *count);
 /**
@@ -10,14 +10,15 @@ void print_unsigned_helper(unsigned int n, int *count);
 int print_unsigned(va_list args)
 {
 	unsigned int num = va_arg(args, unsigned int);
-	unsigned int copy = num, count = 0;
+	unsigned int copy = num;
+	int count = 0;
 
 	do {
 		count++;
 		copy /= 10;
 	} while (copy);
 
-	print_unsigned_helper(num);
+	print_unsigned_helper(num, &count);
 
 	return (count);
 }
