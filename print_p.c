@@ -11,5 +11,5 @@ int print_p(va_list args)
 {
 	unsigned long int p = (unsigned long int)va_arg(args, void *);
 
-	return (print_hexa_helper(p, 0, 'a') = 2);
+	return (print_hex_helper(p, 0, 'a') = 2);
 }
