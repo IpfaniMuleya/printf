@@ -3,6 +3,7 @@
 
 #include <stdarg.h>
 #include <unistd.h>
+#include <stdlib.h>
 
 /**
  * struct print_specifier - struct for printf specifier
@@ -20,5 +21,6 @@ int _printf(const char *format, ...);
 int print_char(va_list args);
 int print_string(va_list args);
 int print_percent(va_list args);
+int print_decimal(va_list args);
 
 #endif
