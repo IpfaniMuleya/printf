@@ -14,7 +14,7 @@ int print_p(va_list args)
 
 	count += _putchar('0');
 	count += _putchar('x');
-	count += print_hexa(p, 0, 'a');
+	count += print_hexa_helper(p, 0, 'a');
 
 	return (count);
 }
