@@ -9,7 +9,12 @@
 
 int print_p(va_list args)
 {
-	unsigned long int p = (unsigned long int)va_arg(args, void *);
+	unsigned long int p = va_arg(args, unsigned long int);
+	int count = 0;
 
-	return (print_hex_helper(p, 0, 'a') = 2);
+	count += _putchar('0');
+	count += _putchar('x');
+	count += print_hexa(p, 0, 'a');
+
+	return (count);
 }
